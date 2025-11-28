@@ -112,6 +112,10 @@ const agent = new Agent({
   // memory: memory, // Uncomment if using memory
 });
 
+
+
+
+
 const dbAgent = new Agent({
   name: "db-agent",
   instructions: "Agent that can inspect database schema and run safe read-only queries.",
@@ -130,12 +134,26 @@ const serverConfig = {
  enableSwaggerUI: true,
  
 };
+const chatAgent = new Agent({
+  name: "chat-agent",
+  instructions: `
+    You are a senior AI assistant. 
+    When the user asks about flights/data/database questions, 
+    DELEGATE to the db-agent using the db_agent tool.
+  `,
+  model: openrouter("x-ai/grok-4.1-fast:free"),
+
+ subAgents:[dbAgent],
+
+  maxSteps: 30
+});
 
 // Initialize VoltAgent
 const voltAgent = new VoltAgent({
   agents: {
     agent,
-    dbAgent
+    dbAgent,
+    chatAgent
   },
   workflows: {
     expenseApprovalWorkflow,
