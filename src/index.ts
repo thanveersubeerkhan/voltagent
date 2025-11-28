@@ -139,7 +139,7 @@ const chatAgent = new Agent({
   instructions: `
     You are a senior AI assistant. 
     When the user asks about flights/data/database questions, 
-    DELEGATE to the db-agent using the db_agent tool.
+    DELEGATE to the db-agent using the db-agent tool.
   `,
   model: openrouter("x-ai/grok-4.1-fast:free"),
 
