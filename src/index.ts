@@ -117,6 +117,9 @@ const dbAgent = new Agent({
   instructions: "Agent that can inspect database schema and run safe read-only queries.",
   tools: [listDatabases, listTables, listColumns, queryDatabase],
   model: openrouter("x-ai/grok-4.1-fast:free"),
+  maxSteps: 20
+
+  
   // memory: memory, // Uncomment if using memory
 });
 
@@ -125,7 +128,7 @@ const serverConfig = {
   port: parseInt(process.env.PORT || "3141"),
 
  enableSwaggerUI: true,
-
+ 
 };
 
 // Initialize VoltAgent
