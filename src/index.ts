@@ -123,15 +123,9 @@ const dbAgent = new Agent({
 // Server configuration optimized for Render
 const serverConfig = {
   port: parseInt(process.env.PORT || "3141"),
-  hostname: "0.0.0.0", // Important for Render
+  hostname: "https://voltagent.onrender.com", // Important for Render
  enableSwaggerUI: true,
-  // Enable CORS if needed for frontend applications
-  cors: {
-    origin: process.env.ALLOWED_ORIGINS?.split(",") || "*",
-    allowMethods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    allowHeaders: ["Content-Type", "Authorization"],
-    credentials: true,
-  }
+
 };
 
 // Initialize VoltAgent
