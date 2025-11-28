@@ -123,7 +123,7 @@ const dbAgent = new Agent({
 // Server configuration optimized for Render
 const serverConfig = {
   port: parseInt(process.env.PORT || "3141"),
-  hostname: "voltagent.onrender.com", // Important for Render
+
  enableSwaggerUI: true,
 
 };
