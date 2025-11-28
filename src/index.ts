@@ -55,7 +55,7 @@ new VoltAgent({
   },
   server: honoServer(
     {  port: parseInt(process.env.PORT || "3141"),
-    hostname: "::"}
+    hostname: "0.0.0.0"}
   ),
   logger,
   voltOpsClient: new VoltOpsClient({
