@@ -184,7 +184,25 @@ const server = honoServer({
         value: z.number(),
       })
     ),
-  }),
+  }).describe("this data for barchart"),
+    chart1: z.object({
+    title: z.string().optional(),
+    data: z.array(
+      z.object({
+        label: z.string(),
+        value: z.number(),
+      })
+    ),
+  }).describe("this data for linechart"),
+    chart2: z.object({
+    title: z.string().optional(),
+    data: z.array(
+      z.object({
+        label: z.string(),
+        value: z.number(),
+      })
+    ),
+  }).describe("this data for piechart"),
 
 });
        
